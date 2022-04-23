@@ -3,7 +3,7 @@ import 'package:flutter_codigo5_quiz/question.dart';
 
 class QuizBrain{
 
-  final List<Question> _questions = [
+  List<Question> _questions = [
     Question(questionText: "El hombre llegó a luna?", questionAnswer: true),
     Question(questionText: "El mar es azul", questionAnswer: false),
     Question(questionText: "Desayunaron?", questionAnswer: false),
@@ -26,6 +26,18 @@ class QuizBrain{
       _questionNumber++;
     }
   }
+
+  bool isFinished (){
+    if(_questionNumber >= _questions.length - 1){
+      return true;
+    }
+    return false;
+  }
+
+  void restart(){
+    _questionNumber = 0;
+  }
+
 
 
 }
